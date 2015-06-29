@@ -1,5 +1,7 @@
 --TEST--
 Test running a .phar with missing file [phar extension]
+--INI--
+phar.require_hash=Off
 --SKIPIF--
 <?php
 if (!extension_loaded('phar')) { echo 'skip'; }

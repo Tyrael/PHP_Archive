@@ -1,5 +1,7 @@
 --TEST--
 Test statting an open .phar file handle [phar extension]
+--INI--
+phar.require_hash=Off
 --SKIPIF--
 <?php
 if (version_compare(phpversion(), '5.0.0', '<')) {

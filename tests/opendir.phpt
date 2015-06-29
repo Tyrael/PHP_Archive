@@ -1,5 +1,7 @@
 --TEST--
 Test opendir()-related functionality on a .phar, also is_dir()/is_file()
+--INI--
+phar.require_hash=Off
 --SKIPIF--
 --FILE--
 <?php

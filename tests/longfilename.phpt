@@ -1,5 +1,7 @@
 --TEST--
 Test running a .phar that contains a long filename
+--INI--
+phar.require_hash=Off
 --SKIPIF--
 --FILE--
 <?php

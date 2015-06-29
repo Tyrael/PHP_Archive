@@ -1,5 +1,7 @@
 --TEST--
 Test running a .phar that requires a non-existent internal file [phar extension]
+--INI--
+phar.require_hash=Off
 --SKIPIF--
 <?php
 if (!extension_loaded('phar')) {

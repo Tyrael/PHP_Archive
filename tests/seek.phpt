@@ -1,5 +1,7 @@
 --TEST--
 Test seeking a .phar stream
+--INI--
+phar.require_hash=Off
 --SKIPIF--
 <?php
 if (version_compare(phpversion(), '5.0.0', '<')) {
