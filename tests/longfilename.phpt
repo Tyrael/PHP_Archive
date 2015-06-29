@@ -3,7 +3,7 @@ Test running a .phar that contains a long filename
 --SKIPIF--
 --FILE--
 <?php
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phpt_test.php.inc';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'setup.php';
 require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'longfilename' . DIRECTORY_SEPARATOR .
     'longphar.phar';
 echo 'tests done';

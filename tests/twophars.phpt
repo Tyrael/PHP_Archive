@@ -8,6 +8,7 @@ if (version_compare(phpversion(), '5.0.0', '<')) {
 ?>
 --FILE--
 <?php
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'setup.php';
 require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'opendir' . DIRECTORY_SEPARATOR .
     'opendir.phar';
 require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'longfilename' . DIRECTORY_SEPARATOR .

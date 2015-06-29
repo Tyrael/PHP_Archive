@@ -8,7 +8,7 @@ if (version_compare(phpversion(), '5.1.0b1', '<')) {
 ?>
 --FILE--
 <?php
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phpt_test.php.inc';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'setup.php';
 require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'longfilename' . DIRECTORY_SEPARATOR .
     'longphar.phar';
 $phpunit = new PEAR_PHPTest(true);

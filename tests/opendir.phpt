@@ -3,7 +3,7 @@ Test opendir()-related functionality on a .phar, also is_dir()/is_file()
 --SKIPIF--
 --FILE--
 <?php
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phpt_test.php.inc';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'setup.php';
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'opendir' . DIRECTORY_SEPARATOR .
     'opendir.phar';
 $dir = opendir('phar://opendir.phar/');

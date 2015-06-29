@@ -8,7 +8,7 @@ if (!extension_loaded('phar')) {
 ?>
 --FILE--
 <?php
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'phpt_test.php.inc';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'setup.php';
 ini_set('html_errors', 0);
 require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'require_once' . DIRECTORY_SEPARATOR .
     'require_once.phar';

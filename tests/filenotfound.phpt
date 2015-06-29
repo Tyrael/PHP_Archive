@@ -6,6 +6,7 @@ if (extension_loaded('phar')) { echo 'skip'; }
 ?>
 --FILE--
 <?php
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'setup.php';
 function myhand($e, $s)
 {
     if ($e == E_STRICT) return;
