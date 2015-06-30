@@ -7,6 +7,9 @@ phar.require_hash=Off
 if (version_compare(phpversion(), '5.0.0', '<')) {
     echo 'skip php5-only test';
 }
+if (!extension_loaded('zlib')) {
+    echo 'skip zlib extension not installed';
+}
 ?>
 --FILE--
 <?php

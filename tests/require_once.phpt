@@ -7,6 +7,9 @@ phar.require_hash=Off
 if (extension_loaded('phar')) {
     echo 'skip test conflicts with phar extension';
 }
+if (!extension_loaded('zlib')) {
+    echo 'skip zlib extension not installed';
+}
 ?>
 --FILE--
 <?php
