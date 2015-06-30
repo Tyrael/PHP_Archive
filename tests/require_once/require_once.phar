@@ -390,7 +390,7 @@ class PHP_Archive
      * Any attempt to call from outside the .phar or to re-alias the .phar will fail
      * as a security measure.
      * @param string $alias
-     * @param int $dataoffset the value of 40238                   
+     * @param int $dataoffset the value of 40241                   
      */
     public static final function mapPhar($alias = NULL, $dataoffset = NULL)
     {
@@ -512,7 +512,7 @@ class PHP_Archive
             }
         }
         $flags = unpack('V', substr($manifest, 6, 4));
-        $ret = array('compressed' => $flags & 0x00003000);
+        $ret = array('compressed' => $flags[1] & 0x00003000);
         // signature is not verified by default in PHP_Archive, phar is better
         $ret['hassignature'] = $flags & 0x00010000;
         $aliaslen = unpack('V', substr($manifest, 10, 4));
@@ -1148,7 +1148,7 @@ class PHP_Archive
     }
 }}
 if (!class_exists('Phar')) {
-    PHP_Archive::mapPhar(null, 40238                   );
+    PHP_Archive::mapPhar(null, 40241                   );
 } else {
     try {
         Phar::mapPhar();
@@ -1164,4 +1164,4 @@ if (class_exists('PHP_Archive') && !in_array('phar', stream_get_wrappers())) {
 
 
 require_once 'phar://require_once.phar/indexhooha.php';
-__HALT_COMPILER();M            require_once.phar       indexhooha.phpP   >a’UC   óá´	m      ³±/È(àâJMÎÈWˆwóôq·æ*J-,Í,JÏÏKNUP/ÈH,²Ò×GÔ‰éçå—&g¤eæ€øêÖ\öv 
+__HALT_COMPILER();M            require_once.phar       indexhooha.phpP   ò«’UC   óá´	m      ³±/È(àâJMÎÈWˆwóôq·æ*J-,Í,JÏÏKNUP/ÈH,²Ò×GÔ‰éçå—&g¤eæ€øêÖ\öv 

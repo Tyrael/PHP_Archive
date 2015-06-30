@@ -390,7 +390,7 @@ class PHP_Archive
      * Any attempt to call from outside the .phar or to re-alias the .phar will fail
      * as a security measure.
      * @param string $alias
-     * @param int $dataoffset the value of 40193                   
+     * @param int $dataoffset the value of 40196                   
      */
     public static final function mapPhar($alias = NULL, $dataoffset = NULL)
     {
@@ -512,7 +512,7 @@ class PHP_Archive
             }
         }
         $flags = unpack('V', substr($manifest, 6, 4));
-        $ret = array('compressed' => $flags & 0x00003000);
+        $ret = array('compressed' => $flags[1] & 0x00003000);
         // signature is not verified by default in PHP_Archive, phar is better
         $ret['hassignature'] = $flags & 0x00010000;
         $aliaslen = unpack('V', substr($manifest, 10, 4));
@@ -1148,7 +1148,7 @@ class PHP_Archive
     }
 }}
 if (!class_exists('Phar')) {
-    PHP_Archive::mapPhar(null, 40193                   );
+    PHP_Archive::mapPhar(null, 40196                   );
 } else {
     try {
         Phar::mapPhar();
@@ -1164,7 +1164,7 @@ if (class_exists('PHP_Archive') && !in_array('phar', stream_get_wrappers())) {
 
 
 require_once 'phar://opendir.phar/indexhooha.php';
-__HALT_COMPILER();p           opendir.phar       eof.phpt  >a’U–  ø3Tæm         filenotfound.phptM  >a’UZ  b¼m      )   filenotfound/makefilenotfoundphar.php.incï  >a’UÜ   ºm         filenotfound_phar.phpt_  >a’Ua  ®¹¤m         gopearphar.php.inc)  >a’U¯  Œ[ÁQm         indexhooha.php+   >a’U-   pWûm         longfilename.phptä  >a’Uê   7çœm      !   longfilename/makelongphar.php.inc™  >a’UÓ   ,ª²Õm         makepearphar.php.inc  >a’Uw  ›¦¶&m         normalstat.phptÍ  >a’Uş  ñáÊ»m         normalstat_phar.phptõ  >a’U  yÿ{òm         opendir.phpt“	  >a’U>  áêm         opendir/makeopendirphar.php.inc  >a’UÍ  åÂå m         phpt_test.php.incw$  >a’U¼  *æ£^m         planet_php/default_phar.phpĞ  >a’U1  *óÓüm         require_once.phptZ  >a’US  «6ÄÜm      )   require_once/makerequire_oncephar.php.incû  >a’Uá   ßİvm         require_once_phar.phpt€  >a’U›  ]Æ‹%m      	   seek.phpt¤  >a’U8  ï	Šfm         seek_phar.phpt^  >a’Uë   >I:m         streamstat.phptÿ  >a’U  ©eçm         streamstat_phar.phpt  >a’U3  <pOm         test_tar.tar   >a’Uİ   µBê'm      ÍSMo1½ûWŒ*$ÛRw“réUÔnÅ
+__HALT_COMPILER();p           opendir.phar       eof.phpt  ò«’U–  ø3Tæm         filenotfound.phptM  ò«’UZ  b¼m      )   filenotfound/makefilenotfoundphar.php.incï  ò«’UÜ   ºm         filenotfound_phar.phpt_  ò«’Ua  ®¹¤m         gopearphar.php.inc)  ò«’U¯  Œ[ÁQm         indexhooha.php+   ò«’U-   pWûm         longfilename.phptä  ò«’Uê   7çœm      !   longfilename/makelongphar.php.inc™  ò«’UÓ   ,ª²Õm         makepearphar.php.inc  ò«’Uw  ›¦¶&m         normalstat.phptÍ  ò«’Uş  ñáÊ»m         normalstat_phar.phptõ  ò«’U  yÿ{òm         opendir.phpt“	  ò«’U>  áêm         opendir/makeopendirphar.php.inc  ò«’UÍ  åÂå m         phpt_test.php.incw$  ò«’U¼  *æ£^m         planet_php/default_phar.phpĞ  ò«’U1  *óÓüm         require_once.phptZ  ò«’US  «6ÄÜm      )   require_once/makerequire_oncephar.php.incû  ò«’Uá   ßİvm         require_once_phar.phpt€  ò«’U›  ]Æ‹%m      	   seek.phpt¤  ò«’U8  ï	Šfm         seek_phar.phpt^  ò«’Uë   >I:m         streamstat.phptÿ  ò«’U  ©eçm         streamstat_phar.phpt  ò«’U3  <pOm         test_tar.tar   ò«’Uİ   µBê'm      ÍSMo1½ûWŒ*$ÛRw“réUÔnÅ
 DWIp²¶É¸kuc{·ˆ"ş;c'€8 Á¥e%¯ìçç™7_E±®Vë¢`kŒDÄ{cï …Òwm€8lw¬(ê÷5qVü4š€ªkcw~£5İ®ŞÖM}M„³ßyf4ˆÑ8«6nçÛ€‚ğ$ä1ğy9+§·3NÛ3.%|e@n:<ŞÄŸÎö_` aü”}c¯ÉÕuı®úéè‡g7[l»C¡Tâ(%¡„«zY]®o–ÕªjËm	å‡ÑS„ìlüËóŞÙ;mzL|ş'Z(SsÖÒ¼½ §£5œƒÅÏĞT‹¥jŞ4)ùb#J¢hO·Úy´‚§g'“Éof&)#O±r†¨B“¬‡6¨í¸óB£Ó‚DRõ€}Ÿ÷DĞ©yÒpJN4ø?èÏÒ¨‹·{i³é_Å²é]Ä|:eû®L#lE*cnÅêCCe?ŒÅ³IcJS+æ:ŠÂ±[çz¡Û>¢dÆb*÷Pî±Œ¼z)Ù¯˜¾•’ÑKÃ0ÆßóW¥ĞÖ=øhcÌŠâF×!”õjƒ[R“•±ÿİKÇ6D|°OáîËï»ûš$)³u™$¬DëÀôJIõ
 Œ»¶2ğ!];i­/6r‹,IòÇœä¾=6øŞKƒ¢­l;Y6u×÷ù*_àfÚµ“ÄøéPY©•ØêªÆ:üåˆsØnZ‘}“]”ÂMo	±È²3àd¡Õ¡–FU;Œ…ğ!8Œá./²y¹,Å:[ÍŠ©Yt}GK—5½Ú8ò‡İW[©:q¡ålÏ€>?bˆ0™@&Öe‘ÏK†n•ûÖ™NÛ8´#ˆGI]hÎÅ°DhÉ6xQAÊŒÜ£ğ†[4qtôxzZé?Ûøè•vî	ñ—l˜å‡tø‰À1e?·…Z+¤Òtö´"eùY¯á²Z Òaè%x HÃƒ~ává~¥ÁjÂ@†ï>Å»‚Æ°FƒFZ©OËš4‹:‰k¢>¾cV‰ˆĞÃÀ0ü|ßğôó4oXØ–Æ‚Ì0ÆÃIØñmœš=t†T‘Y—R¼û"÷¥PıÀ5§ÚXAƒjBÊñô3²Ùì6œød=†p`„BV*Áj8ş’ZŒ'f˜IV¢¦›²üÒö”ÖcJÜ\u'sÙhÃù,ZÈï ô#ŸVº> ØWåŸÿAµS{éºã=ÅíûA‰kƒ+áœ)gÅòIU¡ÿ–9Ë¶§ËM.hï{'•RÑJÃ0}ÏW\K!¬{ğÑ:eÌŠâFÛE%”5µÁ-©I‹ÊØ¿{“±ÌS89÷œ{nn—iQÆ1)…íÁJIõ
 Œ»¶2ğ!û6ÒZ6r-àÉãâ³ÊJ­^Hg÷Ö;|lÄû àmeÛÉ¢iğµ¸Í–Ù	—×]ÛÙ@tv,çk]Õ¢¨«¦ŒÁÄªÕ@í›ìh;r}…óì.=*<´Z	¨¥QÕFDœ;çÆp“åé¬\ä¼H—Ó|ŠWD©ıĞa,Ô%Í V=úÃæ«­T…b¡edK ë10™@Ê‹2Ïf%ƒÕF%ÇwÛ›NÛ(´# A³;÷ÒŒy†Z´UAw.ŒÑ†;Ãµ0İ{S–"ı'û¥ûF(ñÍ÷òƒê¿°Ÿ²ëÛB­•@ÈO:}X¢Î:u½^À)Z ÒÊànøE
