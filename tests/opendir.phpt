@@ -141,6 +141,6 @@ $phpunit->assertEquals(array (
 closedir($dir);
 echo 'tests done';
 ?>
---EXPECT--
-phar://opendir.phar/indexhooha.phpstring(5) "hello"
+--EXPECTF--
+phar://%sopendir.phar/indexhooha.phpstring(5) "hello"
 tests done

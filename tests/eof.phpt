@@ -22,8 +22,8 @@ var_dump(feof($fp), ftell($fp));
 fclose($fp);
 echo 'tests done';
 ?>
---EXPECT--
-phar://longphar.phar/testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest.phpstring(5) "hello"
+--EXPECTF--
+phar://%slongphar.phar/testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest.phpstring(5) "hello"
 bool(false)
 int(0)
 bool(true)

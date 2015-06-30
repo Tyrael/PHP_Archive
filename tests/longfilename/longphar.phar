@@ -363,7 +363,7 @@ class PHP_Archive
      * @throws Exception
      */
     public static final function loadPhar($file, $alias = NULL)
-    {
+    {var_dump($file, realpath($file), getcwd());
         $file = realpath($file);
         if ($file) {
             $fp = fopen($file, 'rb');
@@ -375,7 +375,7 @@ class PHP_Archive
                     $buffer .= fread($fp, 5);
                     fclose($fp);
                     $pos += 18;
-                    $pos += self::_endOfStubLength(substr($buffer, $pos));
+                    $pos += self::_endOfStubLength(substr($buffer, $pos));var_dump('hi');
                     return self::_mapPhar($file, $pos, $alias);
                 }
             }
@@ -390,7 +390,7 @@ class PHP_Archive
      * Any attempt to call from outside the .phar or to re-alias the .phar will fail
      * as a security measure.
      * @param string $alias
-     * @param int $dataoffset the value of 40299                   
+     * @param int $dataoffset the value of 40299
      */
     public static final function mapPhar($alias = NULL, $dataoffset = NULL)
     {
@@ -771,7 +771,7 @@ class PHP_Archive
               !isset(self::$_pharMapping[$info['host']])) {
             try {
                 self::loadPhar($info['host']);
-                // use alias from here out
+                var_dump($info['host'],self::$_pharFiles);
                 $info['host'] = self::$_pharFiles[$info['host']];
             } catch (Exception $e) {
                 return false;

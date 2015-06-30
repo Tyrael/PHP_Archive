@@ -20,7 +20,7 @@ require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'longfilename' . DIRECTORY_SEP
     'longphar.phar';
 echo 'tests done';
 ?>
---EXPECT--
-phar://opendir.phar/indexhooha.phpstring(5) "hello"
-phar://longphar.phar/testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest.phpstring(5) "hello"
+--EXPECTF--
+phar://%sopendir.phar/indexhooha.phpstring(5) "hello"
+phar://%slongphar.phar/testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest.phpstring(5) "hello"
 tests done
